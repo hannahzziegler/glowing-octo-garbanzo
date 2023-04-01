@@ -2,6 +2,9 @@
 # the bot, but right now is just a bit messy. full workflow that I've been piecing
 # together is shown in the other named .py scrapers within this folder.
 
+# right now, the yaml for the scraper works off of the vacancies.py file that
+# shows just state employee vacancies
+
 import csv
 import datetime
 import requests

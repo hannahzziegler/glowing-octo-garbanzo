@@ -1,9 +1,11 @@
-name: Scrape
+name: Scrape vacancies from the Maryland State Employees Database
 
 on:
   push:
-    branches:
-      - '*'
+    push:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
 
 jobs:
   scheduled:
@@ -18,9 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests bs4
+        run: pip install csv
+        run: pip install time
 
-      # right now it is using the working vacancies scraper as I work through
-      # the big task of getting all the pages for all the letters pulled down
       - name: run scraper
         run: python scrapers/vacancies.py
 

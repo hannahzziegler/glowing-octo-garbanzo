@@ -4,7 +4,7 @@
 # hard-code the number of x15 multiples
 
 import csv
-import datetime
+import time
 import requests
 from bs4 import BeautifulSoup
 import itertools
@@ -13,7 +13,7 @@ import pandas as pd
 page = 0
 table_data = []
 updated_vacancies = []
-while page != 330:
+while page <= 330:
     url = f"https://www.doit.state.md.us/phonebook/IndListing.asp?FirstLetter=vacant&Submit=Search&offset={page}"
     response = requests.get(url)
     html = response.content
@@ -31,3 +31,12 @@ while page != 330:
     page = page + 15
 
 print(table_data)
+
+df = pd.DataFrame(table_data, columns=[
+                  'employee_name', 'agency_name', 'office', 'phone_number'])
+print(df)
+
+csv_file = open("md_employees" + (time.strftime('%Y_%m_%d')) + ".csv", "w")
+writer = csv.writer(csv_file)
+writer.writerow(["employee_name", "agency_name", "office", "phone"])
+writer.writerows(table_data)
