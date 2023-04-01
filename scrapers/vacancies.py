@@ -7,7 +7,6 @@ import csv
 import time
 import requests
 from bs4 import BeautifulSoup
-import itertools
 import pandas as pd
 
 page = 0
