@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests bs4
 
-      - name: run bash setup
-        run: setup.sh
-
       - name: run scraper
         run: python scrapers/vacancies.py
 
