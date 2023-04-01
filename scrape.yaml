@@ -20,8 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests bs4
-        run: pip install csv
-        run: pip install time
+
+      - name: run bash setup
+        run: setup.sh
 
       - name: run scraper
         run: python scrapers/vacancies.py
