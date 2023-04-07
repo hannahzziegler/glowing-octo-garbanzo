@@ -25,6 +25,7 @@ jobs:
         env: 
           SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
         run: python scrapers/vacancies.py
+        
 
       - name: "Commit and push if it changed"
         run: |-
@@ -34,4 +35,3 @@ jobs:
             timestamp=$(date -u)
             git commit -m "Latest data: ${timestamp}" || exit 0
             git push
-      
