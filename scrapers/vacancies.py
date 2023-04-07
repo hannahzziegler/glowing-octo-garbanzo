@@ -92,7 +92,7 @@ if not are_files_equal:
 slack_token = os.environ.get('SLACK_API_TOKEN')
 client = WebClient(token=slack_token)
 
-msg = "There are currently {total_vacancies} state employee vacancies."
+msg = f"There are currently {total_vacancies} state employee vacancies."
 try:
     response = client.chat_postMessage(
         channel="slack-bots",
