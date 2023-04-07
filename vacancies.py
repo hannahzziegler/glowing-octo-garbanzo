@@ -98,3 +98,6 @@ def check_vacancies():
 
 
 check_vacancies()
+
+# tomorrow -- try to make a base file that updates as changes occur so that
+# it's easier to figure out
