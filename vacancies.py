@@ -60,17 +60,12 @@ def check_vacancies():
 
     today = date.today()
     yesterday = today - timedelta(days=1)
-    # yesterday_csv = open(
-    # "md_employees" + (yesterday.strftime('%Y_%m_%d')) + ".csv", "r")
-    # print(yesterday_csv)
 
     print("this should be yesterday's data")
     yesterday_csv = pd.read_csv(
         "md_employees" + (yesterday.strftime('%Y_%m_%d')) + ".csv")
     print(yesterday_csv)
 
-    # pd.DataFrame(yesterday_csv, columns=[
-    #    'employee_name', 'agency_name', 'office', 'phone_number'])
     total_vacancies = len(df. index)
     yesterday_vacancies = len(yesterday_csv. index)
 
@@ -86,7 +81,7 @@ def check_vacancies():
         msg += f"Vacancies have increased since {yesterday}.\n"
     elif total_vacancies == yesterday_vacancies:
         print("The number of vacancies has not changed.")
-        msg += f"The number of vacancies has not changed since {yesterday}.\n"
+        msg += f"The number of vacancies has not changed since {yesterday.strftime('%B %d, %Y')}.\n"
     msg += f"Find an updated file of state employees vacancies here: https://github.com/hannahzziegler/newsapps_bot/blob/main/md_employees{today.strftime('%Y_%m_%d')}.csv \nCheck out the Maryland state employees database: https://www.doit.state.md.us/phonebook/indlisting.asp"
     print(msg)
     try:
