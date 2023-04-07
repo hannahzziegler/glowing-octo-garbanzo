@@ -27,7 +27,6 @@ def check_vacancies():
 
     page = 0
     table_data = []
-    updated_vacancies = []
     while page <= 330:
         url = f"https://www.doit.state.md.us/phonebook/IndListing.asp?FirstLetter=vacant&Submit=Search&offset={page}"
         response = requests.get(url)
