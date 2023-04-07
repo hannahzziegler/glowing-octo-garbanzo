@@ -8,6 +8,9 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+import os
+from slack import WebClient
+from slack.errors import SlackApiError
 
 page = 0
 table_data = []
@@ -39,3 +42,20 @@ csv_file = open("md_employees" + (time.strftime('%Y_%m_%d')) + ".csv", "w")
 writer = csv.writer(csv_file)
 writer.writerow(["employee_name", "agency_name", "office", "phone"])
 writer.writerows(table_data)
+
+slack_token = os.environ.get('SLACK_API_TOKEN')
+
+client = WebClient(token=slack_token)
+msg = "testing!"
+try:
+    response = client.chat_postMessage(
+        channel="slack-bots",
+        text=msg,
+        unfurl_links=True,
+        unfurl_media=True
+    )
+    print("success!")
+except SlackApiError as e:
+    assert e.response["ok"] is False
+    assert e.response["error"]
+    print(f"Got an error: {e.response['error']}")

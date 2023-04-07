@@ -1,25 +1,59 @@
+import csv
+import datetime
 import requests
 from bs4 import BeautifulSoup
+import itertools
+import pandas as pd
+from datetime import datetime
 
-import requests
-from bs4 import BeautifulSoup
+# this works, but it only pulls down the "A" letters because the directory is
+# split into separate pages per each letter
 
-# Define the base URL
-base_url = "https://www.doit.state.md.us/phonebook/indlisting.asp?letter={}&offset={}"
-letters = [chr(i) for i in range(ord('A'), ord('Z')+1)]
+page = 0
 
-for letter in letters:
-    offset = 0
-    page_links = []
-    while True:
-        url = base_url.format(letter, offset)
-        response = requests.get(url)
-        soup = BeautifulSoup(response.content, "html.parser")
-        links = soup.find_all(
-            "a", href=lambda href: href and letter in href and "offset" in href)
-        page_links.extend(links)
-        next_link = soup.find("a", {"title": "Next"})
-        if not next_link:
-            break
-        offset += 15
-    print("Page links for {}: {}".format(letter, page_links))
+big_list = []
+
+# A
+a_list = []
+while page <= 870:
+    url = f"https://www.doit.state.md.us/phonebook/IndListing.asp?FirstLetter=A&offset={page}"
+    response = requests.get(url)
+    html = response.content
+    soup = BeautifulSoup(html, features="html.parser")
+    table = soup.find('table')
+    rows = table.find_all('tr')
+    for row in rows:
+        cells = row.find_all('td')
+        if len(cells) == 4:
+            employee_name = cells[0].get_text().strip()
+            agency_name = cells[1].get_text().strip()
+            office = cells[2].get_text().strip()
+            phone = cells[3].get_text().strip()
+            a_list.append(
+                [employee_name, agency_name, office, phone])
+    page = page + 15
+    big_list.append(a_list)
+
+b_list = []
+while page <= 2010:
+    url = f"https://www.doit.state.md.us/phonebook/IndListing.asp?FirstLetter=B&offset={page}"
+    response = requests.get(url)
+    html = response.content
+    soup = BeautifulSoup(html, features="html.parser")
+    table = soup.find('table')
+    rows = table.find_all('tr')
+    for row in rows:
+        cells = row.find_all('td')
+        if len(cells) == 4:
+            employee_name = cells[0].get_text().strip()
+            agency_name = cells[1].get_text().strip()
+            office = cells[2].get_text().strip()
+            phone = cells[3].get_text().strip()
+            b_list.append(
+                [employee_name, agency_name, office, phone])
+    page = page + 15
+    big_list.append(b_list)
+
+print(a_list)
+print(b_list)
+print(big_list)

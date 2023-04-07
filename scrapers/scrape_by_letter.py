@@ -21,6 +21,8 @@ from datetime import datetime
 
 page = 0
 
+all_employees_data = []
+
 # A
 a_list = []
 while page <= 870:
@@ -40,6 +42,7 @@ while page <= 870:
             a_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(a_list)
 
     # B
 b_list = []
@@ -60,6 +63,7 @@ while page <= 2010:
             b_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(b_list)
 
     # C
 c_list = []
@@ -80,6 +84,7 @@ while page <= 1695:
             c_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(c_list)
 
     # D
 
@@ -101,6 +106,7 @@ while page <= 1200:
             d_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(d_list)
 
     # E
 
@@ -122,6 +128,7 @@ while page <= 450:
             e_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(e_list)
 
 # F
 
@@ -143,6 +150,7 @@ while page <= 915:
             f_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(f_list)
 
 # G
 
@@ -164,6 +172,7 @@ while page <= 1125:
             g_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(g_list)
 
 # H
 
@@ -185,6 +194,7 @@ while page <= 1605:
             h_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(h_list)
 
 # I
 
@@ -206,6 +216,7 @@ while page <= 150:
             i_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(i_list)
 
     # J
 
@@ -227,6 +238,7 @@ while page <= 780:
             j_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(j_list)
 
     # K
 
@@ -248,6 +260,7 @@ while page <= 840:
             k_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(k_list)
 
     # L
 
@@ -269,6 +282,7 @@ while page <= 1065:
             l_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(l_list)
 
     # M
 m_list = []
@@ -289,6 +303,7 @@ while page <= 2100:
             m_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(m_list)
 
     # N
 n_list = []
@@ -309,6 +324,7 @@ while page <= 450:
             n_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(n_list)
 
     # O
 o_list = []
@@ -329,6 +345,7 @@ while page <= 450:
             o_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(o_list)
 
     # P
 p_list = []
@@ -349,6 +366,7 @@ while page <= 1050:
             p_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(p_list)
 
     # Q
 q_list = []
@@ -369,6 +387,7 @@ while page <= 60:
             q_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(q_list)
 
     # R
 r_list = []
@@ -389,6 +408,7 @@ while page <= 1125:
             r_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(r_list)
 
     # S
 s_list = []
@@ -409,6 +429,7 @@ while page <= 2370:
             s_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(s_list)
 
     # T
 t_list = []
@@ -429,6 +450,7 @@ while page <= 840:
             t_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(t_list)
 
     # U
 u_list = []
@@ -449,6 +471,7 @@ while page <= 60:
             u_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(u_list)
 
     # V
 v_list = []
@@ -469,6 +492,7 @@ while page <= 585:
             v_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(v_list)
 
     # W
 w_list = []
@@ -489,6 +513,7 @@ while page <= 1395:
             w_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(w_list)
 
     # X
 x_list = []
@@ -509,6 +534,7 @@ while page <= 15:
             x_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(x_list)
 
     # Y
 y_list = []
@@ -529,6 +555,7 @@ while page <= 150:
             y_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(y_list)
 
     # Z
 z_list = []
@@ -549,14 +576,12 @@ while page <= 165:
             z_list.append(
                 [employee_name, agency_name, office, phone])
     page = page + 15
+    all_employees_data.append(z_list)
 
 print(z_list)
 print(t_list)
 print(e_list)
-
-# print(all_employees_data)
-# all_employees_data = []
-# all_employees_data.append(a_list, b_list, c_list, d_list, e_list, f_list, g_list, h_list, i_list, k_list, l_list, m_list, n_list, o_list, p_list, q_list, r_list, s_list, t_list, u_list, v_list, w_list, x_list, y_list, z_list)
+print(all_employees_data)
 
 # df = pd.DataFrame(all_employees_data, columns=[
 # 'employee_name', 'agency_name', 'office', 'phone_number'])
