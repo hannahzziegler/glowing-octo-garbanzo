@@ -18,6 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests bs4
+        run: pip install slackclient
 
       - name: run scraper
         env: 
