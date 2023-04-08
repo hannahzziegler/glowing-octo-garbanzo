@@ -57,6 +57,13 @@ def check_vacancies():
     writer.writerow(["employee_name", "agency_name", "office", "phone"])
     writer.writerows(table_data)
 
+    # write a file that writes over itself each time the scraper runs so that
+    # we can see what has changed in GitHub.
+    with open(f"md_employees_total.csv", "w") as output_file:
+        csvfile = csv.writer(output_file)
+        csvfile.writerow(["employee_name", "agency_name", "office", "phone"])
+        csvfile.writerows(table_data)
+
     today = date.today()
     yesterday = today - timedelta(days=1)
 
