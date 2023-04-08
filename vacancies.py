@@ -89,7 +89,7 @@ def check_vacancies():
         msg += f"Find an updated file of state employees vacancies here: https://github.com/hannahzziegler/newsapps_bot/blob/main/md_employees{today.strftime('%Y_%m_%d')}.csv \nSee any changes in vacancies in this master file: https://github.com/hannahzziegler/newsapps_bot/commits/30dc35f7f5a3eb6534f454a04377553815459a68/md_employees_total.csv \nCheck out the Maryland state employees database: https://www.doit.state.md.us/phonebook/indlisting.asp"
     elif total_vacancies == yesterday_vacancies:
         print("The number of vacancies has not changed.")
-        msg += f"The number of vacancies has not changed since {yesterday.strftime('%B %d, %Y')}.\n"
+        msg += f"The number of vacancies has not changed since yesterday's update'.\nCheck back tomorrow!"
     print(msg)
     try:
         response = client.chat_postMessage(
